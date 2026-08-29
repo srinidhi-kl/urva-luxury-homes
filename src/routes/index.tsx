@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/urva/navbar";
+import {
+  Hero,
+  Philosophy,
+  Principles,
+  About,
+  Services,
+  Materials,
+  Process,
+  Projects,
+  WhyUrva,
+  Testimonials,
+  Areas,
+  CtaBand,
+  Footer,
+} from "@/components/urva/sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "URVA Architects | Luxury Residential Architecture, Bengaluru";
+const description =
+  "Boutique Bengaluru studio for luxury residential architecture and interior design — clarity, warmth, and timeless intention. Founded by Ar. Varshika Machve.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <Philosophy />
+        <Principles />
+        <About />
+        <Services />
+        <Materials />
+        <Process />
+        <Projects />
+        <WhyUrva />
+        <Testimonials />
+        <Areas />
+        <CtaBand />
+      </main>
+      <Footer />
     </div>
   );
 }
