@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "@/assets/urva-logo.png.asset.json";
+import logoAsset from "@/assets/urva-logo.png.asset.json";
+
+const logo = (logoAsset as { url: string }).url;
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Studio", href: "#studio" },
   { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Works", href: "#works" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,101 +22,83 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
-        scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
+        scrolled ? "border-border bg-background/90 backdrop-blur-md" : "border-transparent"
       }`}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:grid-cols-[auto_1fr_auto]">
-        <a href="#home" className="flex min-w-0 items-center gap-3">
-          <img
-            src={logo.url}
-            alt="URVA Architects"
-            width={44}
-            height={44}
-            className="h-10 w-10 shrink-0 rounded-sm object-cover sm:h-11 sm:w-11"
-          />
-          <span className="hidden text-sm tracking-[0.35em] text-offwhite uppercase sm:inline">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-6 px-6 py-5 md:px-10">
+        <a href="#top" className="flex items-center gap-3">
+          <img src={logo} alt="URVA Architects monogram" className="h-9 w-9 object-contain" />
+          <span className="font-mono text-sm font-extrabold uppercase tracking-[0.35em]">
             Urva
           </span>
         </a>
 
-        <ul className="hidden items-center justify-center gap-9 lg:flex">
+        <nav className="hidden items-center gap-10 lg:flex">
           {links.map((l) => (
-            <li key={l.label}>
-              <a
-                href={l.href}
-                className="link-underline text-[0.78rem] tracking-[0.18em] text-greige uppercase transition-colors hover:text-gold-light"
-              >
-                {l.label}
-              </a>
-            </li>
+            <a
+              key={l.href}
+              href={l.href}
+              className="link-underline font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-foreground/70 transition-colors hover:text-foreground"
+            >
+              {l.label}
+            </a>
           ))}
-        </ul>
+        </nav>
 
-        <div className="flex items-center justify-end gap-3">
+        <div className="hidden items-center gap-6 lg:flex">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-clay">
+            Bengaluru / IN
+          </span>
           <a
             href="#contact"
-            className="hidden rounded-none border border-gold px-6 py-3 text-[0.7rem] tracking-[0.22em] text-gold uppercase transition-colors duration-500 hover:bg-gold hover:text-ink md:inline-block"
+            className="bg-espresso px-6 py-3 font-mono text-[10px] uppercase tracking-[0.25em] text-ivory transition-colors hover:bg-clay"
           >
-            Book a Consultation
+            Enquire
           </a>
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 shrink-0 place-items-center border border-border text-gold lg:hidden"
-          >
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
         </div>
-      </nav>
+
+        <button
+          type="button"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+          className="flex h-10 w-10 flex-col items-center justify-center gap-[6px] border border-border lg:hidden"
+        >
+          <span
+            className={`h-px w-4 bg-foreground transition-transform duration-300 ${open ? "translate-y-[3px] rotate-45" : ""}`}
+          />
+          <span
+            className={`h-px w-4 bg-foreground transition-transform duration-300 ${open ? "-translate-y-[4px] -rotate-45" : ""}`}
+          />
+        </button>
+      </div>
 
       <div
-        className={`fixed inset-0 top-0 z-40 flex flex-col justify-center bg-background transition-opacity duration-500 lg:hidden ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        className={`overflow-hidden border-t border-border bg-background transition-[max-height] duration-500 lg:hidden ${
+          open ? "max-h-96" : "max-h-0 border-t-0"
         }`}
       >
-        <ul className="space-y-7 px-10">
-          {links.map((l, i) => (
-            <li
-              key={l.label}
-              className="reveal is-visible"
-              style={{
-                transitionDelay: `${i * 70}ms`,
-                opacity: open ? 1 : 0,
-                transform: open ? "none" : "translateY(20px)",
-              }}
-            >
-              <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="font-serif text-4xl text-offwhite"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-          <li>
+        <nav className="flex flex-col px-6 py-4">
+          {links.map((l) => (
             <a
-              href="#contact"
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="mt-4 inline-block border border-gold px-7 py-4 text-[0.7rem] tracking-[0.22em] text-gold uppercase"
+              className="border-b border-border py-4 font-mono text-xs uppercase tracking-[0.3em]"
             >
-              Book a Consultation
+              {l.label}
             </a>
-          </li>
-        </ul>
+          ))}
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="mt-5 bg-espresso px-6 py-4 text-center font-mono text-[11px] uppercase tracking-[0.25em] text-ivory"
+          >
+            Enquire
+          </a>
+        </nav>
       </div>
     </header>
   );
