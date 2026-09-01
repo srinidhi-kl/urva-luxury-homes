@@ -158,7 +158,7 @@
   --offwhite: oklch(0.18 0.012 60);
   --ink: oklch(0.975 0.01 85);
   --espresso: oklch(0.2 0.014 60);
-  --gradient-gold: linear-gradient(100deg, #8a6521 0%, #b08b3f 50%, #8a6521 100%);
+  --gradient-gold: linear-gradient(100deg, #75551a 0%, #a37c33 50%, #75551a 100%);
   --shadow-gold: 0 24px 60px -30px rgba(138, 101, 33, 0.35);
   --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
