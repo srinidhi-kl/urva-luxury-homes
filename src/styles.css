@@ -132,47 +132,44 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-/* ---------- URVA brand layer (light beige) ---------- */
+/* ---------- URVA brand layer — Warm Limestone (light) ---------- */
 :root {
-  --background: oklch(0.982 0.007 85);
-  --foreground: oklch(0.19 0.012 60);
-  --card: oklch(0.948 0.012 85);
-  --card-foreground: oklch(0.19 0.012 60);
-  --popover: oklch(0.975 0.008 85);
-  --popover-foreground: oklch(0.19 0.012 60);
-  --primary: oklch(0.5 0.09 72);
-  --primary-foreground: oklch(0.97 0.01 85);
-  --secondary: oklch(0.93 0.014 85);
-  --secondary-foreground: oklch(0.19 0.012 60);
-  --muted: oklch(0.93 0.014 85);
-  --muted-foreground: oklch(0.38 0.016 70);
-  --accent: oklch(0.5 0.09 72);
-  --accent-foreground: oklch(0.97 0.01 85);
-  --border: oklch(0.4 0.05 72 / 25%);
-  --input: oklch(0.4 0.05 72 / 30%);
-  --ring: oklch(0.5 0.09 72 / 45%);
+  --radius: 0rem;
+  --background: oklch(0.965 0.008 85); /* #F7F4EF ivory */
+  --foreground: oklch(0.26 0.01 60); /* #2B2622 espresso */
+  --card: oklch(0.9 0.017 82); /* #E7DFD3 sand */
+  --card-foreground: oklch(0.26 0.01 60);
+  --popover: oklch(0.965 0.008 85);
+  --popover-foreground: oklch(0.26 0.01 60);
+  --primary: oklch(0.26 0.01 60);
+  --primary-foreground: oklch(0.965 0.008 85);
+  --secondary: oklch(0.9 0.017 82);
+  --secondary-foreground: oklch(0.26 0.01 60);
+  --muted: oklch(0.9 0.017 82);
+  --muted-foreground: oklch(0.45 0.012 65);
+  --accent: oklch(0.635 0.093 78); /* #B08B3F clay bronze */
+  --accent-foreground: oklch(0.965 0.008 85);
+  --border: oklch(0.26 0.01 60 / 14%);
+  --input: oklch(0.26 0.01 60 / 20%);
+  --ring: oklch(0.635 0.093 78 / 45%);
 
-  --gold: oklch(0.5 0.09 72);
-  --gold-light: oklch(0.42 0.08 68);
-  --greige: oklch(0.35 0.018 70);
-  --offwhite: oklch(0.18 0.012 60);
-  --ink: oklch(0.975 0.01 85);
-  --espresso: oklch(0.2 0.014 60);
-  --gradient-gold: linear-gradient(100deg, #75551a 0%, #a37c33 50%, #75551a 100%);
-  --shadow-gold: 0 24px 60px -30px rgba(138, 101, 33, 0.35);
+  --clay: oklch(0.635 0.093 78);
+  --clay-deep: oklch(0.52 0.085 72);
+  --sand: oklch(0.9 0.017 82);
+  --ivory: oklch(0.965 0.008 85);
+  --espresso: oklch(0.26 0.01 60);
   --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shadow-spread: 0 40px 80px -40px rgba(43, 38, 34, 0.35);
 }
 
-
 @theme inline {
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-greige: var(--greige);
-  --color-offwhite: var(--offwhite);
-  --color-ink: var(--ink);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-sand: var(--sand);
+  --color-ivory: var(--ivory);
   --color-espresso: var(--espresso);
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -184,6 +181,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -191,34 +189,31 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif);
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-family: var(--font-mono);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
   }
 
   ::selection {
-    background: #b08b3f;
-    color: #fdfaf3;
+    background: var(--clay);
+    color: var(--ivory);
   }
 }
 
-@utility text-gold-gradient {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-@utility bg-gold-gradient {
-  background: var(--gradient-gold);
-}
-
-@utility label-caps {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
+@utility tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--clay);
+}
+
+@utility rule-line {
+  height: 1px;
+  background: var(--clay);
+  opacity: 0.55;
 }
 
 @utility link-underline {
@@ -232,13 +227,17 @@
     width: 100%;
     transform: scaleX(0);
     transform-origin: right;
-    background: var(--gradient-gold);
+    background: var(--clay);
     transition: transform 0.5s var(--ease-lux);
   }
   &:hover::after {
     transform: scaleX(1);
     transform-origin: left;
   }
+}
+
+@utility vertical-rl {
+  writing-mode: vertical-rl;
 }
 
 .reveal {
@@ -254,21 +253,6 @@
   transform: none;
 }
 
-.draw path,
-.draw rect {
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
-}
-.draw.is-drawing path,
-.draw.is-drawing rect {
-  animation: urva-draw 3.4s var(--ease-lux) forwards;
-}
-@keyframes urva-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
 @keyframes urva-marquee {
   from {
     transform: translateX(0);
@@ -278,7 +262,7 @@
   }
 }
 .marquee-track {
-  animation: urva-marquee 38s linear infinite;
+  animation: urva-marquee 42s linear infinite;
 }
 .marquee:hover .marquee-track {
   animation-play-state: paused;
@@ -288,7 +272,7 @@
   0%,
   100% {
     transform: translateY(0);
-    opacity: 0.7;
+    opacity: 0.6;
   }
   50% {
     transform: translateY(8px);
@@ -301,15 +285,12 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .draw path,
-  .draw rect,
   .marquee-track,
   .scroll-cue {
     animation: none !important;
     transition: none !important;
     opacity: 1;
     transform: none;
-    stroke-dashoffset: 0;
   }
 }
 
