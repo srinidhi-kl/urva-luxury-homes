@@ -134,30 +134,31 @@
 
 /* ---------- URVA brand layer (light beige) ---------- */
 :root {
-  --background: oklch(0.965 0.012 85);
-  --foreground: oklch(0.26 0.014 60);
-  --card: oklch(0.93 0.016 85);
-  --card-foreground: oklch(0.26 0.014 60);
-  --popover: oklch(0.96 0.012 85);
-  --popover-foreground: oklch(0.26 0.014 60);
-  --primary: oklch(0.55 0.09 72);
+  --background: oklch(0.982 0.007 85);
+  --foreground: oklch(0.19 0.012 60);
+  --card: oklch(0.948 0.012 85);
+  --card-foreground: oklch(0.19 0.012 60);
+  --popover: oklch(0.975 0.008 85);
+  --popover-foreground: oklch(0.19 0.012 60);
+  --primary: oklch(0.5 0.09 72);
   --primary-foreground: oklch(0.97 0.01 85);
-  --secondary: oklch(0.91 0.018 85);
-  --secondary-foreground: oklch(0.26 0.014 60);
-  --muted: oklch(0.91 0.018 85);
-  --muted-foreground: oklch(0.46 0.018 70);
-  --accent: oklch(0.55 0.09 72);
+  --secondary: oklch(0.93 0.014 85);
+  --secondary-foreground: oklch(0.19 0.012 60);
+  --muted: oklch(0.93 0.014 85);
+  --muted-foreground: oklch(0.38 0.016 70);
+  --accent: oklch(0.5 0.09 72);
   --accent-foreground: oklch(0.97 0.01 85);
-  --border: oklch(0.45 0.05 72 / 22%);
-  --input: oklch(0.45 0.05 72 / 28%);
-  --ring: oklch(0.55 0.09 72 / 45%);
+  --border: oklch(0.4 0.05 72 / 25%);
+  --input: oklch(0.4 0.05 72 / 30%);
+  --ring: oklch(0.5 0.09 72 / 45%);
 
-  --gold: oklch(0.55 0.085 72);
-  --gold-light: oklch(0.46 0.075 68);
-  --greige: oklch(0.47 0.02 70);
-  --offwhite: oklch(0.24 0.014 60);
+  --gold: oklch(0.5 0.09 72);
+  --gold-light: oklch(0.42 0.08 68);
+  --greige: oklch(0.35 0.018 70);
+  --offwhite: oklch(0.18 0.012 60);
   --ink: oklch(0.975 0.01 85);
-  --gradient-gold: linear-gradient(100deg, #8a6521 0%, #b08b3f 50%, #8a6521 100%);
+  --espresso: oklch(0.2 0.014 60);
+  --gradient-gold: linear-gradient(100deg, #75551a 0%, #a37c33 50%, #75551a 100%);
   --shadow-gold: 0 24px 60px -30px rgba(138, 101, 33, 0.35);
   --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -169,6 +170,7 @@
   --color-greige: var(--greige);
   --color-offwhite: var(--offwhite);
   --color-ink: var(--ink);
+  --color-espresso: var(--espresso);
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 }

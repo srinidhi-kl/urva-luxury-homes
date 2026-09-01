@@ -459,9 +459,9 @@ export function Projects() {
                   height={912}
                   className="aspect-[4/3] w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-ink via-ink/85 to-transparent px-7 py-6 transition-transform duration-700 ease-out group-hover:translate-y-0 max-sm:translate-y-0">
+<figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-espresso via-espresso/85 to-transparent px-7 py-6 transition-transform duration-700 ease-out group-hover:translate-y-0 max-sm:translate-y-0">
                   <h3 className="text-2xl text-gold-gradient">{p.name}</h3>
-                  <p className="mt-1 text-[0.68rem] tracking-[0.28em] text-greige uppercase">
+                  <p className="mt-1 text-[0.68rem] tracking-[0.28em] text-primary-foreground/75 uppercase">
                     {p.cat}
                   </p>
                 </figcaption>
