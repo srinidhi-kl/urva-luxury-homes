@@ -18,7 +18,7 @@ import {
 
 const title = "URVA Architects | Luxury Residential Architecture, Bengaluru";
 const description =
-  "Boutique Bengaluru studio for luxury residential architecture and interior design — clarity, warmth, and timeless intention. Founded by Ar. Varshika Machve.";
+  "Boutique Bengaluru studio for luxury residential architecture and interiors — raw materiality, precise geometry, principal-led detailing. Founded by Ar. Varshika Machve.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
