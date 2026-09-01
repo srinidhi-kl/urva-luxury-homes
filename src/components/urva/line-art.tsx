@@ -27,9 +27,9 @@ export function SkylineLineArt({ className = "" }: { className?: string }) {
         </g>
         <defs>
           <linearGradient id="urvaGold" x1="0" y1="0" x2="1200" y2="0">
-            <stop stopColor="#C9A24B" />
-            <stop offset="0.5" stopColor="#E8C97A" />
-            <stop offset="1" stopColor="#C9A24B" />
+            <stop stopColor="#8A6521" />
+            <stop offset="0.5" stopColor="#B08B3F" />
+            <stop offset="1" stopColor="#8A6521" />
           </linearGradient>
         </defs>
       </svg>
@@ -55,8 +55,8 @@ export function FloorPlanLineArt({ className = "" }: { className?: string }) {
         </g>
         <defs>
           <linearGradient id="urvaGold2" x1="0" y1="0" x2="400" y2="400">
-            <stop stopColor="#C9A24B" />
-            <stop offset="1" stopColor="#E8C97A" />
+            <stop stopColor="#8A6521" />
+            <stop offset="1" stopColor="#B08B3F" />
           </linearGradient>
         </defs>
       </svg>
