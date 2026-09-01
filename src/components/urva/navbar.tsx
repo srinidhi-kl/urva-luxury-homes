@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/urva-logo.png";
+import logoAsset from "@/assets/urva-logo.png.asset.json";
+
+const logo = (logoAsset as { url: string }).url;
 
 const links = [
   { label: "Studio", href: "#studio" },
