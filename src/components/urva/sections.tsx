@@ -51,7 +51,7 @@ export function Hero() {
       <div
         className="pointer-events-none absolute -top-24 -right-24 h-[520px] w-[520px] rounded-full opacity-20 blur-[120px]"
         style={{
-          background: "radial-gradient(circle, #C9A24B 0%, transparent 70%)",
+          background: "radial-gradient(circle, #B08B3F 0%, transparent 70%)",
           transform: `translateY(${offset * -0.05}px)`,
         }}
       />
@@ -622,7 +622,7 @@ export function CtaBand() {
     <section id="contact" className="relative overflow-hidden border-t border-border py-24 sm:py-32">
       <div
         className="pointer-events-none absolute inset-0 opacity-25"
-        style={{ background: "radial-gradient(60% 120% at 50% 100%, #C9A24B22, transparent 70%)" }}
+        style={{ background: "radial-gradient(60% 120% at 50% 100%, #B08B3F1f, transparent 70%)" }}
       />
       <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
