@@ -132,35 +132,36 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-/* ---------- URVA brand layer ---------- */
+/* ---------- URVA brand layer (light beige) ---------- */
 :root {
-  --background: oklch(0.13 0.004 60);
-  --foreground: oklch(0.95 0.012 85);
-  --card: oklch(0.16 0.005 60);
-  --card-foreground: oklch(0.95 0.012 85);
-  --popover: oklch(0.16 0.005 60);
-  --popover-foreground: oklch(0.95 0.012 85);
-  --primary: oklch(0.75 0.11 85);
-  --primary-foreground: oklch(0.13 0.004 60);
-  --secondary: oklch(0.2 0.006 70);
-  --secondary-foreground: oklch(0.95 0.012 85);
-  --muted: oklch(0.2 0.006 70);
-  --muted-foreground: oklch(0.78 0.018 85);
-  --accent: oklch(0.75 0.11 85);
-  --accent-foreground: oklch(0.13 0.004 60);
-  --border: oklch(0.75 0.11 85 / 18%);
-  --input: oklch(0.75 0.11 85 / 22%);
-  --ring: oklch(0.75 0.11 85 / 45%);
+  --background: oklch(0.965 0.012 85);
+  --foreground: oklch(0.26 0.014 60);
+  --card: oklch(0.93 0.016 85);
+  --card-foreground: oklch(0.26 0.014 60);
+  --popover: oklch(0.96 0.012 85);
+  --popover-foreground: oklch(0.26 0.014 60);
+  --primary: oklch(0.55 0.09 72);
+  --primary-foreground: oklch(0.97 0.01 85);
+  --secondary: oklch(0.91 0.018 85);
+  --secondary-foreground: oklch(0.26 0.014 60);
+  --muted: oklch(0.91 0.018 85);
+  --muted-foreground: oklch(0.46 0.018 70);
+  --accent: oklch(0.55 0.09 72);
+  --accent-foreground: oklch(0.97 0.01 85);
+  --border: oklch(0.45 0.05 72 / 22%);
+  --input: oklch(0.45 0.05 72 / 28%);
+  --ring: oklch(0.55 0.09 72 / 45%);
 
-  --gold: oklch(0.72 0.105 82);
-  --gold-light: oklch(0.85 0.09 90);
-  --greige: oklch(0.86 0.018 85);
-  --offwhite: oklch(0.96 0.012 85);
-  --ink: oklch(0.1 0.003 60);
-  --gradient-gold: linear-gradient(100deg, #c9a24b 0%, #e8c97a 50%, #c9a24b 100%);
-  --shadow-gold: 0 24px 60px -30px rgba(201, 162, 75, 0.55);
+  --gold: oklch(0.55 0.085 72);
+  --gold-light: oklch(0.46 0.075 68);
+  --greige: oklch(0.47 0.02 70);
+  --offwhite: oklch(0.24 0.014 60);
+  --ink: oklch(0.975 0.01 85);
+  --gradient-gold: linear-gradient(100deg, #8a6521 0%, #b08b3f 50%, #8a6521 100%);
+  --shadow-gold: 0 24px 60px -30px rgba(138, 101, 33, 0.35);
   --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
+
 
 @theme inline {
   --color-gold: var(--gold);
