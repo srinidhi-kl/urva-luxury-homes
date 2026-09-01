@@ -121,7 +121,7 @@ export function Hero() {
             <img
               src={project1}
               alt="Minimal luxury residence facade with deep shadow lines"
-              className="absolute inset-0 h-full w-full object-cover contrast-125 grayscale transition-all duration-[1200ms] hover:grayscale-0"
+              className="absolute inset-0 h-full w-full object-cover grayscale brightness-110 contrast-95 transition-all duration-[1200ms] hover:grayscale-0"
               loading="eager"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso/25 to-transparent" />
